@@ -1,11 +1,11 @@
 import { Text, View, TextProps } from 'react-native';
 import { styles } from "./styles";
 
-interface MyComponentProps extends TextProps {
+interface QuestionProps extends TextProps {
   TextQuestion: string;
 }
 
-const Question: React.FC<MyComponentProps> = (props) => {
+const Question: React.FC<QuestionProps> = (props) => {
 
 
   return (

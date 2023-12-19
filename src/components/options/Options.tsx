@@ -2,7 +2,7 @@ import { Text, View, TouchableOpacity, TextProps} from 'react-native';
 import { styles } from "./styles";
 
 
-interface MyComponentProps extends TextProps {
+interface OptionsProps extends TextProps {
   //define os valores que o props vai receber
   TextOption1: string;
   TextOption2: string;
@@ -12,7 +12,7 @@ interface MyComponentProps extends TextProps {
 
 
 
-const Options: React.FC<MyComponentProps> = (props) => {
+const Options: React.FC<OptionsProps> = (props) => {
 
 
   return (
