@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-// import ImageQuestion from "../../components/image_question/ImageQuestion";
+// import MovieCover from "../../components/movie_cover/MovieCover";
 
  
 export function Home() {
@@ -14,8 +14,8 @@ export function Home() {
            
             <View>
                 
-
-
+           
+           
             </View>
 
 
