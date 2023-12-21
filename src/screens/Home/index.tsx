@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-// import MovieCover from "../../components/movie_cover/MovieCover";
+//import Title from "../../components/title/Title";
 
  
 export function Home() {
