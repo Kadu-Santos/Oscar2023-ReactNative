@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-//import DurationMovie from "../../components/duration_movie/DurationMovie";
+import MovieGenre from "../../components/movie_genre/MovieGenre";
 
  
 export function Home() {
@@ -14,7 +14,9 @@ export function Home() {
            
             <View>
                 
-                
+            <MovieGenre 
+                MovieGenre={"Drama / Ação"}
+            />
            
             </View>
 

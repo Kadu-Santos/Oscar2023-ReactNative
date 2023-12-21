@@ -1,12 +1,12 @@
 import { View, Text, TextProps, Image} from 'react-native';
 import { styles } from "./styles";
 
-interface DurationMovieProps extends TextProps {
-  DurationMovie: string; // porém so deve entrar número
+interface MovieDurationProps extends TextProps {
+  MovieDuration: string; // porém so deve entrar número
 }
 
 
-const DurationMovie: React.FC<DurationMovieProps> = (props) => {
+const MovieDuration: React.FC<MovieDurationProps> = (props) => {
 
   return (
     <View style={styles.container}>
@@ -17,13 +17,13 @@ const DurationMovie: React.FC<DurationMovieProps> = (props) => {
               style={styles.icon} 
             />
 
-            <Text style={styles.text}> {props.DurationMovie} m </Text>
+            <Text style={styles.text}> {props.MovieDuration} m </Text>
         </View>
 
       </View>
   );
 };
 
-export default DurationMovie;
+export default MovieDuration;
         
         
