@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-//import DirectorMovie from "../../components/director_movie/DirectorMovie";
+//import DurationMovie from "../../components/duration_movie/DurationMovie";
 
  
 export function Home() {
