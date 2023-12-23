@@ -9,6 +9,33 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  containerReturn: {
+    height: '8%',
+    margin: '3%',
+    marginBottom: '1%',
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 7, 
+    zIndex: 2,
+    padding: '1%',
+  },
+
+  return: {
+    marginTop: '2%',
+    marginLeft: '2%',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    zIndex: 2,
+    padding: '1%',
+    opacity: 0.8,
+  },
+
+  returnTxt: {
+    color: '#fff',
+  },
+
   containerimage: {
     width: '100%',
     position: 'relative', // Importante para posicionar elementos filhos relativos a este
