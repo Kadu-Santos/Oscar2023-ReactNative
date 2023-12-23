@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-//import MovieAvailable from "../../components/movie_available/MovieAvailable";
+//import RestartButton from "../../components/restart_button/RestartButton";
 
  
 export function Home() {
@@ -14,7 +14,7 @@ export function Home() {
            
             <View>
                 
-            
+                
            
             </View>
 

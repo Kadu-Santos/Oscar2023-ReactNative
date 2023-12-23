@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
 
   },
 
-  containerDisponivel: {
+  containerAvailable: {
     justifyContent: 'center',
     display:'flex',
     flexDirection: 'column',
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
 
   },
 
-  containerDisponivelFixo: {
+  containerAvailableFixed: {
     width: '67%',
     justifyContent: 'center',
     display:'flex',
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     marginRight: '2%',
   },
 
-  containerIoconeDisponivel: {
+  containerIoconAvailable: {
     width: '55%',
     height:'45%',
     display: 'flex',
@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     marginTop: '0%',
   },
   
-  iconDisponivel: {
+  iconAvailable: {
     width: '18%',
     height:'80%',
     margin: '3%',

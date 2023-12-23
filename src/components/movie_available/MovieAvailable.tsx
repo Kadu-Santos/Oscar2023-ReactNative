@@ -13,8 +13,8 @@ const MovieAvailable: React.FC<MovieAvailableProps> = (props) => {
   return (
     <View style={styles.container}>
 
-      <View style={styles.containerDisponivel}> 
-        <View style={styles.containerDisponivelFixo}>
+      <View style={styles.containerAvailable}> 
+        <View style={styles.containerAvailableFixed}>
           <Image 
             source={{ uri: 'https://i.pinimg.com/736x/e8/c8/50/e8c8508ecb6668b065319d3d739f005d.jpg' }}
             style={styles.icon} 
@@ -23,20 +23,20 @@ const MovieAvailable: React.FC<MovieAvailableProps> = (props) => {
           <Text style={styles.text}>Disponivel em:</Text>
         </View>
 
-        <View style={styles.containerIoconeDisponivel}>
+        <View style={styles.containerIoconAvailable}>
           <Image 
             source={{ uri: props.AvailableIn1 }}
-            style={styles.iconDisponivel} 
+            style={styles.iconAvailable} 
           />
 
           <Image 
             source={{ uri: props.AvailableIn2 }}
-            style={styles.iconDisponivel} 
+            style={styles.iconAvailable} 
           />
 
           <Image 
             source={{ uri: props.AvailableIn3 }}
-            style={styles.iconDisponivel} 
+            style={styles.iconAvailable} 
           />
         </View>
 
