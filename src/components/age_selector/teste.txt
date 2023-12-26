@@ -1,0 +1,29 @@
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import Slider  from "@react-native-community/slider";
+import { styles } from './styles';
+
+
+const AgeSelector = () => {
+  const [selectedAge, setSelectedAge] = useState(25);
+
+  const onAgeChange = (value: React.SetStateAction<number>) => {
+    setSelectedAge(value);
+  };
+
+  return (
+    <View style={styles.container}>
+
+      <Slider
+        style={styles.slider}
+        minimumValue={14}
+        maximumValue={85}
+        step={1}
+        value={selectedAge}
+        onValueChange={onAgeChange}
+      />
+    </View>
+  );
+};
+
+export default AgeSelector;
