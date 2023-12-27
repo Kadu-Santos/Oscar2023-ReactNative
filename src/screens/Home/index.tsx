@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-import AgeSelector from "../../components/age_selector/AgeSelector";
+import DropDownSectors from "../../components/drop_down_sectors/DropDownSectors";
 
  
 export function Home() {
@@ -8,13 +8,13 @@ export function Home() {
         <View>
 
 
-            <View style={styles.container}>
+            {/* <View style={styles.container}>
                 <Text> Oscar 2023</Text>
-            </View>
+            </View> */}
            
             <View>
                 
-            <AgeSelector/>
+                <DropDownSectors/>
 
             </View>
 
