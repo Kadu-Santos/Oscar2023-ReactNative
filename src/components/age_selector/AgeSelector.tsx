@@ -10,10 +10,6 @@ const AgeSelector = () => {
     setSelectedAge(value);
   };
 
-  const onSlidingComplete = (value: number) => {
-    console.log('Valor final selecionado:', value);
-    // Aqui você pode realizar qualquer ação necessária com o valor final selecionado
-  };
 
   const onTextInputChange = (text: string) => {
     const age = parseInt(text, 10);
@@ -24,7 +20,7 @@ const AgeSelector = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.selectedValueText}>Idade: {selectedAge}</Text>
+
       <Slider
         style={styles.slider}
         minimumValue={14}
@@ -32,13 +28,14 @@ const AgeSelector = () => {
         step={1}
         value={selectedAge}
         onValueChange={onAgeChange}
-        onSlidingComplete={onSlidingComplete}
       />
+
       <TextInput
         style={styles.input}
         keyboardType="numeric"
         value={selectedAge.toString()}
         onChangeText={onTextInputChange}
+        editable={false}
       />
     </View>
   );

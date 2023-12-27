@@ -5,18 +5,12 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 100,
+    marginTop: 400,
   },
 
   slider: {
     width: '80%',
-  
-  },
-
-  selectedValueText: {
-    marginTop: 20,
-    fontSize: 18,
-    color: 'black',
+    trackHeight: 50,
   },
 
   input: {
@@ -25,5 +19,6 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     width: '80%',
     height: 40,
+    color: 'black',
   },
 });
