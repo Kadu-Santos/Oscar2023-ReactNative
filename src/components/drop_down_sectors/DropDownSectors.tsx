@@ -18,7 +18,7 @@ const DropDownSectors = () => {
     { key: '8', value: 'Docentes' },
     { key: '9', value: 'Setor de Estágio' },
     { key: '10', value: 'Núcleo Pedagógico' },
-    { key: '12', value: 'CGAE' },
+    { key: '11', value: 'CGAE' },
     { key: '12', value: 'Almoxarifado' },
     { key: '13', value: 'Biblioteca' },
     { key: '14', value: 'Secretaria' },
@@ -31,8 +31,8 @@ const DropDownSectors = () => {
 
   const handleDropdownChange = (value: { key: string; value: string } | null) => {
     setSelectedOption(value);
-    let selectedSetor = value;
-    console.log('Opção selecionada:', selectedSetor);
+    let selectedSector = value;
+    console.log('Opção selecionada:', selectedSector);
   };
   
 
