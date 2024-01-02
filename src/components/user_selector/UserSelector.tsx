@@ -20,7 +20,7 @@ const UserSelector = () => {
 
       <RadioForm
         radio_props={options}
-        initial={0}
+        initial={-1}
         onPress={(value) => {
           setChosenOption(value);
         }}
