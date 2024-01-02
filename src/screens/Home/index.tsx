@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-import AgeSelector from "../../components/age_selector/AgeSelector";
+import UserSelector from "../../components/user_selector/UserSelector";
 
  
 export function Home() {
@@ -14,7 +14,7 @@ export function Home() {
            
             <View>
                 
-                <AgeSelector/>
+            <UserSelector/>
 
             </View>
 
