@@ -17,12 +17,7 @@ export function Home() {
 
             <Question textQuestionKey={"01"} />
 
-            <Options 
-                 
-               
-                KeyFristOption={"2"}
-                KeySecondOption={"2"} 
-                KeyBackgroundOptions={"1"}/>
+            <Options KeyOption={"1"} />
 
             
 
