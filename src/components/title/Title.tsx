@@ -6,14 +6,14 @@ interface TitleProps extends TextProps {
   TitleKey: string;
 }
 
-const getQuestioByKey = (key: string | undefined) => {
+const getTitleOptionsByKey = (key: string | undefined) => {
   const TitleEntry = TitleOptions.find((entry) => entry.key === key);
   return TitleEntry ? TitleEntry.value : null;
 };
 
 const Title: React.FC<TitleProps> = (props) => {
   const { TitleKey } = props;
-  const TitleValue = getQuestioByKey(TitleKey);
+  const TitleValue = getTitleOptionsByKey(TitleKey);
 
   return (
     <View style={styles.container}>

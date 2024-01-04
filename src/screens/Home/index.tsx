@@ -18,10 +18,11 @@ export function Home() {
             <Question textQuestionKey={"01"} />
 
             <Options 
-                TextOption1={"Aluno"} 
-                TextOption2={"Servidor"} 
-                BackgroundColorBtn={"#7ccff6"}
-            />
+                 
+               
+                KeyFristOption={"2"}
+                KeySecondOption={"2"} 
+                KeyBackgroundOptions={"1"}/>
 
             
 
