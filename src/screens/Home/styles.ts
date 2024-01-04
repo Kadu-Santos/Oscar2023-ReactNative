@@ -6,13 +6,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    // justifyContent: 'center',
+    justifyContent: 'center',
   },
 
   title: {
-    fontSize: 50,
+    fontSize: 40,
     marginBottom: '5%',
-    marginTop: '10%',
+    marginTop: '13%',
   },
 
   gambiarra: {

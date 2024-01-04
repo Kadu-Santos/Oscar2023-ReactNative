@@ -14,7 +14,7 @@ export function Home() {
             <View style={styles.gambiarra}> 
             </View>
 
-            <Question TextQuestion={"Qual sua função no IFNMG?"}/>
+            <Question textQuestionKey={"01"} />
 
             <Options 
                 TextOption1={"Aluno"} 
