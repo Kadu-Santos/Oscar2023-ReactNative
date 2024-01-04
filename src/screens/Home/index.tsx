@@ -4,6 +4,7 @@ import ImageQuestion from "../../components/image_question/ImageQuestion";
 import Question from "../../components/question/Question";
 import Options from "../../components/options/Options"; 
 // import initialImage from '../../images/initial.png'; 
+import Title from "../../components/title/Title";
 
 export function Home() {
     return(
@@ -21,6 +22,8 @@ export function Home() {
                 TextOption2={"Servidor"} 
                 BackgroundColorBtn={"#7ccff6"}
             />
+
+            
 
 
         </View>
