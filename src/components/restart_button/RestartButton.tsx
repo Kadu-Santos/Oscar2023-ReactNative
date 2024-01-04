@@ -1,12 +1,20 @@
 import { Text, View, TextProps, TouchableOpacity } from 'react-native';
 import { styles } from "./styles";
+import themes from "../../Styles/theme"
+import BackgroundOptions from '../options/BackgroundOptions';
 
 interface RestartButtonProps extends TextProps {
-  BackgroundColorBtn: string;
+  BackgroundOptionsKey: string;
 }
 
-const RestartButton: React.FC<RestartButtonProps> = (props) => {
+const getBackgroundOptionsByKey = (key: string | undefined) => {
+  const BackgroundOptionsEntry = BackgroundOptions.find((entry) => entry.key === key);
+  return BackgroundOptionsEntry ? BackgroundOptionsEntry.value : null;
+};
 
+const RestartButton: React.FC<RestartButtonProps> = (props) => {
+  const { BackgroundOptionsKey } = props;
+  const BackgroundOptionsValue = getBackgroundOptionsByKey(BackgroundOptionsKey);
 
   return (
     <View  style={styles.container}> 
@@ -16,7 +24,7 @@ const RestartButton: React.FC<RestartButtonProps> = (props) => {
          <TouchableOpacity 
           style={[
             styles.button,
-            { backgroundColor: props.BackgroundColorBtn },
+            {backgroundColor: BackgroundOptionsValue !== null ? BackgroundOptionsValue : themes.colors.default  },
             { borderRadius: 20 },
           ]}
           //onPress = () add ação do botão

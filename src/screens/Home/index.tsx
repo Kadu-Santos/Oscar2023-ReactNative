@@ -5,6 +5,7 @@ import Question from "../../components/question/Question";
 import Options from "../../components/options/Options"; 
 // import initialImage from '../../images/initial.png'; 
 import Title from "../../components/title/Title";
+import RestartButton from "../../components/restart_button/RestartButton"
 
 export function Home() {
     return(
@@ -15,9 +16,11 @@ export function Home() {
             <View style={styles.gambiarra}> 
             </View>
 
-            <Question textQuestionKey={"01"} />
+            {/* <Question textKey={"01"} />
 
-            <Options KeyOption={"1"} />
+            <Options OptionKey={"1"} /> */}
+
+                    <RestartButton BackgroundOptionsKey={"001"}/>
 
             
 

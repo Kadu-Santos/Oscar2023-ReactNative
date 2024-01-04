@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
   container: {
- 
+    width: '100%',
   },
   
   containerRestartButton: {
@@ -15,13 +15,9 @@ export const styles = StyleSheet.create({
   
   button: {
     width: '50%',
-    height: '45%',
-    backgroundColor: '#DDDDDD',
+    height: '35%',
     margin: '4%',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.38,
-    shadowRadius: 3,
+
   },
   
   textBtn: {

@@ -4,7 +4,7 @@ import { styles } from "./styles";
 import ArrayQuestions from './ArrayQuestions';
 
 interface QuestionProps extends TextProps {
-  textQuestionKey: string; 
+  textKey: string; 
 }
 
 
@@ -14,8 +14,8 @@ const getQuestioByKey = (key: string | undefined) => {
 };
 
 const Question: React.FC<QuestionProps> = (props) => {
-  const { textQuestionKey } = props;
-  const QuestionValue = getQuestioByKey(textQuestionKey);
+  const { textKey } = props;
+  const QuestionValue = getQuestioByKey(textKey);
 
   return (
     <View style={styles.container}>

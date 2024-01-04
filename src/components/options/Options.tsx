@@ -6,7 +6,7 @@ import SecondGroupOptions from "./SecondGroupOptions";
 import BackgroundOptions from "./BackgroundOptions";
 
 interface OptionsProps extends TextProps {
-  KeyOption: string;
+  OptionKey: string;
 
 }
 
@@ -28,14 +28,14 @@ const getBackgroundOptionsByKey = (key: string | undefined) => {
 
 const Options: React.FC<OptionsProps> = (props) => {
 
-  const { KeyOption } = props;
-  const FristOptionsValue = getFristGroupOptionsByKey(KeyOption);
+  const { OptionKey } = props;
+  const FristOptionsValue = getFristGroupOptionsByKey(OptionKey);
 
 
-  const SecondOptionsValue = getSecondGroupOptionsByKey(KeyOption);
+  const SecondOptionsValue = getSecondGroupOptionsByKey(OptionKey);
 
 
-  const BackgroundOptionsValue = getBackgroundOptionsByKey(KeyOption);
+  const BackgroundOptionsValue = getBackgroundOptionsByKey(OptionKey);
 
   return (
     <View  style={styles.container}>
