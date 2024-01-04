@@ -3,19 +3,20 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
   container: {
- 
+    width: '80%',
+    
+
   },
   
   text: {
     fontSize: '110%',
-    fontFamily: 'Arial',
-    width: '90%',
+    width: '100%',
     textAlign: 'center',
   },
 
   
   questionContainer: {
-    marginTop: '5%',
+    marginTop: '3%',
     alignItems: 'center',
 
     padding: 10,
@@ -24,8 +25,9 @@ export const styles = StyleSheet.create({
   },
   
   question: {
-    fontSize: 22,
-    width: '90%'
+    fontSize: 24,
+    padding: 10,
+    textAlign: 'center',
   },
   
   
