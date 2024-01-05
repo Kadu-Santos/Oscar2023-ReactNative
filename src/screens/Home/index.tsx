@@ -13,6 +13,8 @@ export function Home() {
 
         <MovieDescription MovieDescriptionKey={"1"}      
         />
+
+        <DirectorMovie NameDirectorKey={"9"}/>
                 
             
 

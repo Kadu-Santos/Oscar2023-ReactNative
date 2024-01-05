@@ -3,15 +3,14 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
   container: {
-    // backgroundColor: '#000',
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50, // tirar
   },
 
   containerDirector: {
-    width: '50%',
+    width: '90%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -19,8 +18,8 @@ export const styles = StyleSheet.create({
   },
 
   icon: {
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
   },
 
   text: {

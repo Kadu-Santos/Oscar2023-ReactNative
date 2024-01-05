@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50, // tirar
+    marginTop: 10, // tirar
   },
 
   containerDescription: {
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: '3%',
-    marginBottom: '1%',
+
   
   },
 

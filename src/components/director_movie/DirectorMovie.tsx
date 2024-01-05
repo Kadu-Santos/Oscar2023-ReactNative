@@ -1,12 +1,19 @@
 import { View, Text, TextProps, Image} from 'react-native';
 import { styles } from "./styles";
+import NameDirectorOptions from "./NameDirectorOptions";
 
 interface DirectorMovieProps extends TextProps {
-  NameDirector: string;
+  NameDirectorKey: string;
 }
 
+const getNameDirectorByKey = (key: string | undefined) => {
+  const NameDirectorEntry = NameDirectorOptions.find((entry) => entry.key === key);
+  return NameDirectorEntry ? NameDirectorEntry.value : null;
+};
 
 const DirectorMovie: React.FC<DirectorMovieProps> = (props) => {
+  const { NameDirectorKey } = props;
+  const NameDirectorValue = getNameDirectorByKey(NameDirectorKey);
 
   return (
     <View style={styles.container}>
@@ -17,7 +24,7 @@ const DirectorMovie: React.FC<DirectorMovieProps> = (props) => {
               style={styles.icon} 
             />
 
-            <Text style={styles.text}> {props.NameDirector} </Text>
+            <Text style={styles.text}>{NameDirectorValue}</Text>
         </View>
 
     </View>

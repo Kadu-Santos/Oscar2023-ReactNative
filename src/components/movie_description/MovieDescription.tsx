@@ -6,7 +6,7 @@ interface MovieDescriptionProps extends TextProps {
   MovieDescriptionKey: string;
 }
 
-const getMovieDescriptionKey = (key: string | undefined) => {
+const getMovieDescriptionByKey = (key: string | undefined) => {
   const MovieDescriptionEntry = MovieDescriptionOptions.find((entry) => entry.key === key);
   return MovieDescriptionEntry ? MovieDescriptionEntry.value : null;
 };
@@ -14,7 +14,7 @@ const getMovieDescriptionKey = (key: string | undefined) => {
 
 const MovieDescription: React.FC<MovieDescriptionProps> = (props) => {
   const { MovieDescriptionKey } = props;
-  const MovieDescriptionValue = getMovieDescriptionKey(MovieDescriptionKey);
+  const MovieDescriptionValue = getMovieDescriptionByKey(MovieDescriptionKey);
 
   return (
     <View style={styles.container}>
