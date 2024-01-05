@@ -11,12 +11,13 @@ export function Home() {
     return(
         <View style={styles.container}>
 
-        <MovieDescription MovieDescriptionKey={"1"}      
-        />
+        <MovieDescription MovieDescriptionKey={"1"}/>
 
         <DirectorMovie NameDirectorKey={"1"}/>
                 
         <MovieDuration MovieDurationKey={"1"}/>
+
+        <MovieGenre MovieGenreKey={"1"}/>
 
 
         </View>

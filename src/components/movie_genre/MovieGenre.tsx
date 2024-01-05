@@ -1,23 +1,31 @@
 import { View, Text, TextProps, Image} from 'react-native';
 import { styles } from "./styles";
+import MovieGenreOptions from "./MovieGenreOptions";
 
 interface MovieGenreProps extends TextProps {
-  MovieGenre: string;
+  MovieGenreKey: string;
 }
+
+const getMovieGenreByKey = (key: string | undefined) => {
+  const MovieGenreEntry = MovieGenreOptions.find((entry) => entry.key === key);
+  return MovieGenreEntry ? MovieGenreEntry.value : null;
+};
 
 
 const MovieGenre: React.FC<MovieGenreProps> = (props) => {
+  const { MovieGenreKey } = props;
+  const MovieGenreValue = getMovieGenreByKey(MovieGenreKey);
 
   return (
     <View style={styles.container}>
 
       <View style={styles.containerGenre}> 
         <Image 
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1940/1940191.png'}}
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/4639/4639069.png'}}
           style={styles.icon} 
         />
 
-         <Text style={styles.text}> {props.MovieGenre}</Text>
+         <Text style={styles.text}>{MovieGenreValue}</Text>
       </View>
 
       </View>
