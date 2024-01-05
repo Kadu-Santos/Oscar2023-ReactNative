@@ -14,9 +14,9 @@ export function Home() {
         <MovieDescription MovieDescriptionKey={"1"}      
         />
 
-        <DirectorMovie NameDirectorKey={"9"}/>
+        <DirectorMovie NameDirectorKey={"1"}/>
                 
-            
+        <MovieDuration MovieDurationKey={"1"}/>
 
 
         </View>
