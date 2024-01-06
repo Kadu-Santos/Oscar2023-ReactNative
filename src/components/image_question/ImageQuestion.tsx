@@ -1,7 +1,7 @@
 import { View, Image, TextProps, Text } from 'react-native';
 import { styles } from "./styles";
 
-import initial from '../../images/initial.png';
+import img from "./images/initial.png"
 
 
 const ImagesPath = [
@@ -45,10 +45,16 @@ const getImagePathByKey = (key: string | undefined) => {
             resizeMode='contain' // ou 'cover' dependendo da sua necessidade
           /> */}
 
+
+
+
+
+
+
       <Image 
-            source={{ uri: '../../images/initial.png' }}
+            source={require('./images/initial.png')}
             style={styles.image}
-            resizeMode='contain' // ou 'cover' dependendo da sua necessidade
+             
           />
         
       </View>

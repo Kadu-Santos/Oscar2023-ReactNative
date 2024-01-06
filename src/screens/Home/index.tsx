@@ -5,11 +5,15 @@ import DirectorMovie from "../../components/director_movie/DirectorMovie";
 import MovieDuration from "../../components/movie_duration/MovieDuration";
 import MovieGenre from "../../components/movie_genre/MovieGenre";
 import MovieAvailable from "../../components/movie_available/MovieAvailable";
+import ImageQuestion from "../../components/image_question/ImageQuestion";
+
 
 
 export function Home() {
     return(
         <View style={styles.container}>
+
+        <ImageQuestion/>
 
         <MovieDescription MovieDescriptionKey={"1"}/>
 
@@ -18,6 +22,7 @@ export function Home() {
         <MovieDuration MovieDurationKey={"1"}/>
 
         <MovieGenre MovieGenreKey={"1"}/>
+
 
 
         </View>
