@@ -13,7 +13,7 @@ export function Home() {
     return(
         <View style={styles.container}>
 
-        <ImageQuestion/>
+        <ImageQuestion ImageKey={"10"}/>
 
         <MovieDescription MovieDescriptionKey={"1"}/>
 
