@@ -7,12 +7,21 @@ import MovieGenre from "../../components/movie_genre/MovieGenre";
 import MovieAvailable from "../../components/movie_available/MovieAvailable";
 import ImageQuestion from "../../components/image_question/ImageQuestion";
 import MovieCover from "../../components/movie_cover/MovieCover";
-import NextButton from "../../components/next_button/NextButton"
+import RestartButton from "../../components/restart_button/RestartButton";
 
+// ------------------ IMPORTANTE --------------------------------
+// todos os componentes estão passando string, se tiver que mudar para number
+// mude o tipo na interface para number
+// mude o tipo da key no verificador de arrya de  (key: string | undefined) para  (key: number | undefined)
+// tire todas as aspas das key que estão presente nos arrays
 
+// o ponto positivo de ser number é que se só puder pussuir uma página, a lógica fica mais simpes, so aterar o valor da variavel
 
+//---------------------------------------------------------------
 
 export function Home() {
+
+    const teste = '1'; 
     return(
         <View style={styles.container}>
 
@@ -28,7 +37,8 @@ export function Home() {
 
         {/* <MovieCover Coverkey={"1"}/> */}
 
-        <NextButton OptionKey={"1"}/>
+        <RestartButton BackgroundKey={teste}/>
+        
 
         </View>
     );
