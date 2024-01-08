@@ -6,6 +6,8 @@ import MovieDuration from "../../components/movie_duration/MovieDuration";
 import MovieGenre from "../../components/movie_genre/MovieGenre";
 import MovieAvailable from "../../components/movie_available/MovieAvailable";
 import ImageQuestion from "../../components/image_question/ImageQuestion";
+import MovieCover from "../../components/movie_cover/MovieCover";
+
 
 
 
@@ -13,7 +15,7 @@ export function Home() {
     return(
         <View style={styles.container}>
 
-        <ImageQuestion ImageKey={"10"}/>
+        {/* <ImageQuestion ImageKey={"10"}/>
 
         <MovieDescription MovieDescriptionKey={"1"}/>
 
@@ -21,9 +23,9 @@ export function Home() {
                 
         <MovieDuration MovieDurationKey={"1"}/>
 
-        <MovieGenre MovieGenreKey={"1"}/>
+        <MovieGenre MovieGenreKey={"1"}/> */}
 
-
+        <MovieCover Coverkey={"1"}/>
 
         </View>
     );

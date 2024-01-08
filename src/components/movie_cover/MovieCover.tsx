@@ -1,21 +1,30 @@
 import { View, Image, TextProps,TouchableOpacity, Text} from 'react-native';
 import { styles } from "./styles";
+import { getAgeClasificatorByKey } from "./getAgeClasificatorByKey";
+import CoversPath from "./CoversPath";
+import { getStarsPathByKey } from "./getStarsPathByKey";
 
 interface MovieCoverProps extends TextProps {
-  ImageUrl: string;
-  IconStars: string;
-  IconAge: string;
+  Coverkey: string;
 }
 
+const getCoversPathByKey = (key: string | undefined) => {
+  const CoversEntry = CoversPath.find((entry) => entry.key === key);
+  return CoversEntry ? CoversEntry.value : null;
+};
+
 const MovieCover: React.FC<MovieCoverProps> = (props) => {
+  const {Coverkey} = props;
+  const age = getAgeClasificatorByKey(Coverkey);
+  const cover = getCoversPathByKey(Coverkey);
+  const stars = getStarsPathByKey(Coverkey);
 
   return (
     <View style={styles.container}>
 
-
       <View style={styles.containerimage}>
         <Image
-          source={{ uri: props.ImageUrl }}
+          source={cover}
           style={styles.image}
         />
 
@@ -36,16 +45,18 @@ const MovieCover: React.FC<MovieCoverProps> = (props) => {
         <View style={styles.containerInfo}>
 
           <Image
-            source={{ uri: props.IconStars }}
+            source={stars}
             style={styles.iconStars}
           />
 
           <Image
-            source={{ uri: props.IconAge }}
+            source={age}
             style={styles.iconAge}
           />
 
         </View>
+
+
       </View>
 
       </View>

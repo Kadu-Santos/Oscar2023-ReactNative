@@ -3,22 +3,25 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
   container: {
-    // backgroundColor: '#000',
+    width: '100%',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 
   containerReturn: {
-    height: '8%',
+    width: '20%',
+    height: '3%',
     margin: '3%',
     marginBottom: '1%',
     position: 'absolute',
     left: 0,
     right: 0,
-    top: 7, 
+    top: 20, 
     zIndex: 2,
     padding: '1%',
+    backgroundColor: '#D6D6D6',
+    opacity: 0.7,
+    textAlign: "center",
+    borderRadius: 20
   },
 
   return: {
@@ -29,11 +32,14 @@ export const styles = StyleSheet.create({
     top: 0,
     zIndex: 2,
     padding: '1%',
-    opacity: 0.8,
+    
+  
   },
 
   returnTxt: {
-    color: '#fff',
+    color: '#000',
+    marginLeft: '10%',
+
   },
 
   containerimage: {
@@ -64,13 +70,16 @@ export const styles = StyleSheet.create({
   },
 
   iconStars: {
-    width: '40%',
-    marginLeft: -10, // gambiarra
-    marginBottom: -10, // gambiarra
+    width: '60%',
+    height: 'auto',
+    marginLeft: -10,
+
   },
 
   iconAge: {
-    width: '8%',
+    width: '10%',
+    height: 'auto',
+    marginRight: -10
   },
   
   });
