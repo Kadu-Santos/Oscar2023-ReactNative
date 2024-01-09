@@ -1,4 +1,4 @@
-const SecondGroupOptions = [
+const SecondOptionsText = [
   { key: '1', value: 'Nada de filme meloso' },
   { key: '2', value: 'Amizade' },
   { key: '3', value: 'Parece chato' },
@@ -14,4 +14,4 @@ const SecondGroupOptions = [
   { key: '13', value: 'Influencers' },
 ];
 
-export default SecondGroupOptions;
+export default SecondOptionsText;

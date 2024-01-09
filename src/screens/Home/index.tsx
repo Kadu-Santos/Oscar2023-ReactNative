@@ -1,13 +1,10 @@
+import React, { useState } from 'react';
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-import MovieDescription from "../../components/movie_description/MovieDescription";
-import DirectorMovie from "../../components/director_movie/DirectorMovie";
-import MovieDuration from "../../components/movie_duration/MovieDuration";
-import MovieGenre from "../../components/movie_genre/MovieGenre";
-import MovieAvailable from "../../components/movie_available/MovieAvailable";
-import ImageQuestion from "../../components/image_question/ImageQuestion";
-import MovieCover from "../../components/movie_cover/MovieCover";
-import RestartButton from "../../components/restart_button/RestartButton";
+
+import ImageQuestion from '../../components/image_question/ImageQuestion';
+import Question from '../../components/question/Question';
+import Options from '../../components/options/Options';
 
 // ------------------ IMPORTANTE --------------------------------
 // todos os componentes estão passando string, se tiver que mudar para number
@@ -19,27 +16,28 @@ import RestartButton from "../../components/restart_button/RestartButton";
 
 //---------------------------------------------------------------
 
-export function Home() {
 
-    const teste = '1'; 
+
+export function Home() {
+    const [QuestionID, setQuestionID] = useState('1');
+
+    const handlePress = (newValue: string) => {
+        setQuestionID(newValue);
+      };
+
     return(
         <View style={styles.container}>
 
-        <ImageQuestion ImageKey={"10"}/>
+            <ImageQuestion ImageKey={QuestionID}/>
 
-        <MovieDescription MovieDescriptionKey={"1"}/>
+            <Question textKey={QuestionID}/>
 
-        <DirectorMovie NameDirectorKey={"1"}/>
+            <Options OptionKey={QuestionID} 
                 
-        <MovieDuration MovieDurationKey={"1"}/>
-
-        <MovieGenre MovieGenreKey={"1"}/>
-
-        {/* <MovieCover Coverkey={"1"}/> */}
-
-        <RestartButton BackgroundKey={teste}/>
-        
+                onPressCallback={handlePress}
+            />
 
         </View>
     );
 }
+

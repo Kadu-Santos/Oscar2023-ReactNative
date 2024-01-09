@@ -1,4 +1,4 @@
-const FristGroupOptions = [
+const FristOptionsText = [
   { key: '1', value: 'Já peguei o lenço' },
   { key: '2', value: 'Família' },
   { key: '3', value: 'Parece divertido' },
@@ -14,4 +14,4 @@ const FristGroupOptions = [
   { key: '13', value: 'Barões da tecnologia' },
 ];
 
-export default FristGroupOptions;
+export default FristOptionsText;

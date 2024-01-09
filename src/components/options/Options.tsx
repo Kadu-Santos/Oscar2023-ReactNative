@@ -1,25 +1,36 @@
 import { Text, View, TouchableOpacity, TextProps} from 'react-native';
 import { styles } from "./styles";
 import themes from "../../Styles/theme"
-import FristGroupOptions from "./FristGroupOptions";
-import SecondGroupOptions from "./SecondGroupOptions";
+import FristOptionsText from "./FristOptionsText";
+import SecondOptionsText from "./SecondOptionsText";
 import BackgroundOptions from "./BackgroundOptions";
+import FristOptionsRoute from "./FristOptionsRoute";
+import SecondOptionsRoute from "./SecondOptionsRoute";
 
 interface OptionsProps extends TextProps {
   OptionKey: string;
-
+  onPressCallback: (key: string) => void; 
 }
 
-const getFristGroupOptionsByKey = (key: string | undefined) => {
-  const FristOptionsEntry = FristGroupOptions.find((entry) => entry.key === key);
-  return FristOptionsEntry ? FristOptionsEntry.value : null;
+const getFristOptionsTextByKey = (key: string | undefined) => {
+  const FristOptionsTextEntry = FristOptionsText.find((entry) => entry.key === key);
+  return FristOptionsTextEntry ? FristOptionsTextEntry.value : null;
 };
 
-const getSecondGroupOptionsByKey = (key: string | undefined) => {
-  const SecondOptionsEntry = SecondGroupOptions.find((entry) => entry.key === key);
-  return SecondOptionsEntry ? SecondOptionsEntry.value : null;
+const getFristOptionsRouteByKey = (key: string | undefined) => {
+  const FristOptionsRouteEntry = FristOptionsRoute.find((entry) => entry.key === key);
+  return FristOptionsRouteEntry ? FristOptionsRouteEntry.value : '';
 };
 
+const getSecondOptionsTextByKey = (key: string | undefined) => {
+  const SecondOptionsTextEntry = SecondOptionsText.find((entry) => entry.key === key);
+  return SecondOptionsTextEntry ? SecondOptionsTextEntry.value : null;
+};
+
+const getSecondOptionsRouteByKey = (key: string | undefined) => {
+  const SecondOptionsRouteEntry = SecondOptionsRoute.find((entry) => entry.key === key);
+  return SecondOptionsRouteEntry ? SecondOptionsRouteEntry.value : '';
+};
 
 const getBackgroundOptionsByKey = (key: string | undefined) => {
   const BackgroundOptionsEntry = BackgroundOptions.find((entry) => entry.key === key);
@@ -28,13 +39,9 @@ const getBackgroundOptionsByKey = (key: string | undefined) => {
 
 const Options: React.FC<OptionsProps> = (props) => {
 
-  const { OptionKey } = props;
-  const FristOptionsValue = getFristGroupOptionsByKey(OptionKey);
-
-
-  const SecondOptionsValue = getSecondGroupOptionsByKey(OptionKey);
-
-
+  const { OptionKey, onPressCallback } = props;
+  const FristOptionsTextValue = getFristOptionsTextByKey(OptionKey);
+  const SecondOptionsValue = getSecondOptionsTextByKey(OptionKey);
   const BackgroundOptionsValue = getBackgroundOptionsByKey(OptionKey);
 
   return (
@@ -48,9 +55,12 @@ const Options: React.FC<OptionsProps> = (props) => {
             { backgroundColor: BackgroundOptionsValue !== null ? BackgroundOptionsValue : themes.colors.default },
             { borderRadius: 20 },
           ]}
-          // onPress = () realizar função quando clicar
+          onPress={() => {
+            const nextKey = getFristOptionsRouteByKey(OptionKey);
+            onPressCallback(nextKey);
+          }}
           >
-          <Text style={styles.text}>{FristOptionsValue}</Text>
+          <Text style={styles.text}>{FristOptionsTextValue}</Text>
         </TouchableOpacity>
 
 
@@ -60,7 +70,10 @@ const Options: React.FC<OptionsProps> = (props) => {
             {  backgroundColor: BackgroundOptionsValue !== null ? BackgroundOptionsValue : themes.colors.default},
             { borderRadius: 20 },
           ]}
-          // onPress = () realizar função quando clicar
+          onPress={() => {
+            const nextKey = getSecondOptionsRouteByKey(OptionKey);
+            onPressCallback(nextKey);
+          }}
           >
           <Text style={styles.text}>{SecondOptionsValue}</Text>
         </TouchableOpacity>
