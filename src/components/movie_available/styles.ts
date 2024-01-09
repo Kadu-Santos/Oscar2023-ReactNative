@@ -3,7 +3,9 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
   container: {
-
+    width: '100%',
+    height: '10%',
+    marginTop: '2%',
   },
 
   containerAvailable: {
@@ -11,10 +13,6 @@ export const styles = StyleSheet.create({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginBottom: '3%',
-
-    marginTop: 100,
-
   },
 
   containerAvailableFixed: {
@@ -23,11 +21,10 @@ export const styles = StyleSheet.create({
     display:'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: '0%',
   },
   
   text:{
-    paddingBottom: '4%',
+    paddingBottom: '2%',
     paddingRight: '4%',
     paddingLeft: '2%',
     paddingTop:'5%', 
@@ -42,21 +39,20 @@ export const styles = StyleSheet.create({
   },
 
   containerIoconAvailable: {
-    width: '55%',
-    height:'45%',
+    width: '67%',
+    height:'50%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
-    marginTop: '0%',
+  
   },
   
   iconAvailable: {
-    width: '18%',
-    height:'80%',
-    margin: '3%',
-    marginTop: '0%',
+    width: '10%',
+    height: '65%',
+    margin: '2%',
+
   },
   
   });
