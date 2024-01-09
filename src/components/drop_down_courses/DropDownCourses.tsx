@@ -29,3 +29,4 @@ const DropDownCourses = () => {
     </View>
   );
 };
+export default DropDownCourses;

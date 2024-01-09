@@ -8,8 +8,7 @@ export const styles = StyleSheet.create({
   
   imgQuestionContainer: {
     display: 'flex',
-    alignItems: 'center',
-    marginTop: '15%', //tirar 
+    alignItems: 'center', 
   },
   
   image: {

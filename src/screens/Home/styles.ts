@@ -9,19 +9,16 @@ export const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
 
+  containertitle: {
+    width: '100%',
+    textAlign: "center",
+    alignItems:  'center'
+  },
+
   title: {
-    fontSize: 40,
-    marginBottom: '5%',
+    fontSize: 50,
     marginTop: '13%',
   },
-
-  gambiarra: {
-    width: '80%',
-    height: '40%',
-    backgroundColor: '#333',
-
-  },
-
 
 
 });

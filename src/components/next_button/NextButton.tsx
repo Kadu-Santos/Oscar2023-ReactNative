@@ -2,11 +2,17 @@ import { Text, View, TouchableOpacity, TextProps} from 'react-native';
 import { styles } from "./styles";
 import themes from "../../Styles/theme"
 import BackgroundOptions from "./BackgroundOptions";
+import OptionsRoute from './OptionsRoute'; 
 
 interface OptionsProps extends TextProps {
   OptionKey: string;
-
+  onPressCallback: (key: string) => void; 
 }
+
+const getOptionsRouteByKey = (key: string | undefined) => {
+  const OptionsRouteEntry = OptionsRoute.find((entry) => entry.key === key);
+  return OptionsRouteEntry ? OptionsRouteEntry.value : '';
+};
 
 const getBackgroundOptionsByKey = (key: string | undefined) => {
   const BackgroundOptionsEntry = BackgroundOptions.find((entry) => entry.key === key);
@@ -14,7 +20,7 @@ const getBackgroundOptionsByKey = (key: string | undefined) => {
 };
 
 function TextValueOptions (key: string | undefined) {
-  if (key === '4') {
+  if (key === '04') {
     const TextValoue = 'Começar'
     return TextValoue;
   } else{
@@ -23,9 +29,9 @@ function TextValueOptions (key: string | undefined) {
   }
 }
 
-const Options: React.FC<OptionsProps> = (props) => {
+const NextButton: React.FC<OptionsProps> = (props) => {
 
-  const { OptionKey } = props;
+  const { OptionKey, onPressCallback } = props;
   const BackgroundOptionsValue = getBackgroundOptionsByKey(OptionKey);
   const TextButton = TextValueOptions(OptionKey);
 
@@ -40,7 +46,10 @@ const Options: React.FC<OptionsProps> = (props) => {
             { backgroundColor: BackgroundOptionsValue !== null ? BackgroundOptionsValue : themes.colors.default },
             { borderRadius: 20 },
           ]}
-            // onPress = () realizar função quando clicar
+          onPress={() => {
+            const nextKey = getOptionsRouteByKey(OptionKey);
+            onPressCallback(nextKey);
+          }}
           >
           <Text style={styles.text}> {TextButton} </Text>
         </TouchableOpacity>
@@ -54,4 +63,4 @@ const Options: React.FC<OptionsProps> = (props) => {
 };
 
 
-export default Options;
+export default NextButton;

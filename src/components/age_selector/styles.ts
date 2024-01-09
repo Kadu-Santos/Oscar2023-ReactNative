@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 400,
+    marginTop: '15%',
+    marginBottom: '15%'
   },
 
   slider: {

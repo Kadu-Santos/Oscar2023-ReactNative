@@ -24,6 +24,9 @@ const UserSelector = () => {
         onPress={(value) => {
           setChosenOption(value);
         }}
+        
+        labelStyle={{ fontSize: 20, color: '#000' }} // da erro, mas funciona
+        buttonSize={25}
 
       />
 
