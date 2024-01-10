@@ -12,6 +12,7 @@ const DropDownSectors = () => {
     setSelectedOption(value);
     let selectedSector = value;
     console.log('Opção selecionada:', selectedSector);
+    //selectedSector recebe o setor selecionado
   };
   
 

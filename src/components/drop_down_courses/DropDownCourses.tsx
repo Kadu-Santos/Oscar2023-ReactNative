@@ -13,6 +13,7 @@ const DropDownCourses = () => {
     setSelectedOption(value);
     let selectedCourses = value;
     console.log('Opção selecionada:', selectedCourses);
+    // selectedCourses recebe o valor selecionado
   };
   
 

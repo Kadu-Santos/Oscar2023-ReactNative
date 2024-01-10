@@ -9,7 +9,7 @@ import SecondOptionsRoute from "./SecondOptionsRoute";
 
 interface OptionsProps extends TextProps {
   OptionKey: string;
-  onPressCallback: (key: string) => void; 
+  onPressCallback: (key: string, buttonPressed: number) => void; 
 }
 
 const getFristOptionsTextByKey = (key: string | undefined) => {
@@ -57,7 +57,7 @@ const Options: React.FC<OptionsProps> = (props) => {
           ]}
           onPress={() => {
             const nextKey = getFristOptionsRouteByKey(OptionKey);
-            onPressCallback(nextKey);
+            onPressCallback(nextKey, 1);
           }}
           >
           <Text style={styles.text}>{FristOptionsTextValue}</Text>
@@ -72,7 +72,7 @@ const Options: React.FC<OptionsProps> = (props) => {
           ]}
           onPress={() => {
             const nextKey = getSecondOptionsRouteByKey(OptionKey);
-            onPressCallback(nextKey);
+            onPressCallback(nextKey, 2);
           }}
           >
           <Text style={styles.text}>{SecondOptionsValue}</Text>

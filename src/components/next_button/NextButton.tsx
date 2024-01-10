@@ -19,21 +19,10 @@ const getBackgroundOptionsByKey = (key: string | undefined) => {
   return BackgroundOptionsEntry ? BackgroundOptionsEntry.value : null;
 };
 
-function TextValueOptions (key: string | undefined) {
-  if (key === '04') {
-    const TextValoue = 'Começar'
-    return TextValoue;
-  } else{
-    const TextValoue = 'Próximo'
-    return TextValoue;
-  }
-}
-
 const NextButton: React.FC<OptionsProps> = (props) => {
 
   const { OptionKey, onPressCallback } = props;
   const BackgroundOptionsValue = getBackgroundOptionsByKey(OptionKey);
-  const TextButton = TextValueOptions(OptionKey);
 
   return (
     <View  style={styles.container}>
@@ -51,7 +40,7 @@ const NextButton: React.FC<OptionsProps> = (props) => {
             onPressCallback(nextKey);
           }}
           >
-          <Text style={styles.text}> {TextButton} </Text>
+          <Text style={styles.text}> Próximo </Text>
         </TouchableOpacity>
       </View>
 

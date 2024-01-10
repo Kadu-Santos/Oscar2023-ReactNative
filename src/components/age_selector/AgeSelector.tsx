@@ -5,7 +5,7 @@ import { styles } from './styles';
 
 const AgeSelector = () => {
   const [selectedAge, setSelectedAge] = useState(25);
-  let sliderValueAge;
+  
 
   const onAgeChange = (value: React.SetStateAction<number>) => {
     setSelectedAge(value);
@@ -19,8 +19,8 @@ const AgeSelector = () => {
     }
   };
 
-  sliderValueAge = selectedAge;
-  console.log('Valor do Slider:', sliderValueAge);
+  console.log('Valor do Slider:', selectedAge); // selectedAge recebe a idade 
+  
 
 
   return (
