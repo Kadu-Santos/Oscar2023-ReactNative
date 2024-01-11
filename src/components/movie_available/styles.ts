@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '10%',
-    marginTop: '2%',
+    marginTop: '4%',
+    marginBottom: '10%'
   },
 
   containerAvailable: {
@@ -40,18 +41,20 @@ export const styles = StyleSheet.create({
 
   containerIoconAvailable: {
     width: '67%',
-    height:'50%',
+    height:'70%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: '3%'
   
   },
   
   iconAvailable: {
-    width: '10%',
-    height: '65%',
+    width: '15%',
+    height: '63%',
     margin: '2%',
+    borderRadius: 7,
 
   },
   

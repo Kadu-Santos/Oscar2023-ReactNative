@@ -45,6 +45,7 @@ export const styles = StyleSheet.create({
   containerimage: {
     width: '100%',
     position: 'relative', // Importante para posicionar elementos filhos relativos a este
+   
   },
 
   image: {

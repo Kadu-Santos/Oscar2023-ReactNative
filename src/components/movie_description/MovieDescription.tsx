@@ -21,7 +21,7 @@ const MovieDescription: React.FC<MovieDescriptionProps> = (props) => {
 
         <View style={styles.containerDescription}> 
           <Image 
-            source={{ uri: 'https://w7.pngwing.com/pngs/970/882/png-transparent-computer-icons-description.png' }}
+            source={{ uri: 'https://cdn-icons-png.flaticon.com/128/1642/1642358.png' }}
             style={styles.icon} 
           />
 

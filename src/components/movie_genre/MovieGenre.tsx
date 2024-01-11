@@ -21,7 +21,7 @@ const MovieGenre: React.FC<MovieGenreProps> = (props) => {
 
       <View style={styles.containerGenre}> 
         <Image 
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/4639/4639069.png'}}
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8616/8616806.png'}}
           style={styles.icon} 
         />
 

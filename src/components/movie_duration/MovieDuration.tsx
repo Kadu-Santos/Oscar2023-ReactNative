@@ -21,7 +21,7 @@ const MovieDuration: React.FC<MovieDurationProps> = (props) => {
 
         <View style={styles.containerDuration}> 
             <Image 
-              source={{ uri: 'https://img.freepik.com/vetores-premium/icone-de-vetor-de-relogio_712079-433.jpg' }}
+              source={{ uri: 'https://cdn-icons-png.flaticon.com/128/3964/3964959.png' }}
               style={styles.icon} 
             />
 

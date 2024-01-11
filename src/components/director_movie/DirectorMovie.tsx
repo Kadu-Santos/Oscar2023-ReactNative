@@ -20,7 +20,7 @@ const DirectorMovie: React.FC<DirectorMovieProps> = (props) => {
 
         <View style={styles.containerDirector}> 
             <Image 
-              source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1581/1581249.png' }}
+              source={{ uri: 'https://cdn-icons-png.flaticon.com/128/408/408426.png' }}
               style={styles.icon} 
             />
 
