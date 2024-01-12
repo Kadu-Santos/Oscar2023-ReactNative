@@ -80,7 +80,7 @@
 
 
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { styles } from './styles';
 import MovieCover from '../../components/movie_cover/MovieCover';
 import Title from '../../components/title/Title';
@@ -91,32 +91,19 @@ import MovieGenre from '../../components/movie_genre/MovieGenre';
 import MovieAvailable from '../../components/movie_available/MovieAvailable';
 import RestartButton from '../../components/restart_button/RestartButton';
 
-
-
 export default function ScreenMovie() {
-  
-
   const [QuestionID, setQuestionID] = useState('1');
   
   return (
-    <View style={styles.container}>
-
+    <ScrollView style={styles.container}>
       <MovieCover Coverkey={QuestionID}/>
-
       <Title TitleKey={QuestionID}/>
-
       <MovieDescription MovieDescriptionKey={QuestionID}/>
-
       <DirectorMovie NameDirectorKey={QuestionID}/>
-
       <MovieDuration MovieDurationKey={QuestionID}/>
-
       <MovieGenre MovieGenreKey={QuestionID}/>
-
       <MovieAvailable movieKey={QuestionID}/>
-
       <RestartButton BackgroundKey={QuestionID}/>
-
-    </View>
+    </ScrollView>
   );
 }
