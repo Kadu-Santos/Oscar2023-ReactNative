@@ -5,6 +5,6 @@ export default {
     },
 
     fonts: {
- 
+        regular: "Michroma_400Regular"
     }
 }

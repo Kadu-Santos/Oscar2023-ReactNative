@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
    box:{
     backgroundColor: theme.colors.primary,
     height: '100%',
+
    },
 
     container: {
@@ -13,14 +14,5 @@ export const styles = StyleSheet.create({
       width: '90%',
       alignSelf: 'center'
     },
-
-    linkTerms:{
-      color: 'blue',
-      padding: 15
-    },
-
-    termsButton:{
-      alignItems: 'center'
-    }
 
 });
