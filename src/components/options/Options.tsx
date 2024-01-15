@@ -9,7 +9,8 @@ import SecondOptionsRoute from "./SecondOptionsRoute";
 
 interface OptionsProps extends TextProps {
   OptionKey: string;
-  onPressCallback: (key: string, buttonPressed: number) => void; 
+  onPressCallback: (key: string, buttonPressed: number) => void;
+  onPress: () => void;
 }
 
 const getFristOptionsTextByKey = (key: string | undefined) => {

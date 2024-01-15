@@ -7,8 +7,10 @@ import Options from '../../../components/options/Options';
 import { Link } from 'expo-router';
 import FristOptionsRoute from "./FristOptionsRoute";
 import SecondOptionsRoute from "./SecondOptionsRoute";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ScreenQuestion() {
+  const navigation = useNavigation();
   const [QuestionID, setQuestionID] = useState('1');
   
 
@@ -23,6 +25,7 @@ export default function ScreenQuestion() {
   };
 
   const handlePress = (newValue: string, buttonPressed: number) => {
+    
     if (newValue === '0') {
         if (buttonPressed === 1) {
             const FristOP = getFristOptionsRouteByKey(QuestionID);
@@ -37,18 +40,20 @@ export default function ScreenQuestion() {
 
 
   return (
-    <View style={styles.container}>
 
-      <ImageQuestion ImageKey={QuestionID} />
+      <View style={styles.container}>
 
-      <Question textKey={QuestionID} />
+        <ImageQuestion ImageKey={QuestionID} />
 
-      {/* <Link href='/(tabs)/ScreenMovie/ScreenMovie' asChild>
-        <Options OptionKey={QuestionID} onPressCallback={handlePress} />
-      </Link> */}
+        <Question textKey={QuestionID} />
 
-      <Options OptionKey={QuestionID} onPressCallback={handlePress} />
+        {/* <Link href='/(tabs)/ScreenMovie/ScreenMovie' asChild>
+          <Options OptionKey={QuestionID} onPressCallback={handlePress} />
+        </Link> */}
 
-    </View>
+      <Options OptionKey={QuestionID} onPressCallback={handlePress} onPress={() => navigation.navigate('Home')} />
+
+      </View>
+    
   );
 }
