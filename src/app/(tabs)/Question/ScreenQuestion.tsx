@@ -9,6 +9,7 @@ import FristOptionsRoute from "./FristOptionsRoute";
 import SecondOptionsRoute from "./SecondOptionsRoute";
 export default function ScreenQuestion() {
   const [QuestionID, setQuestionID] = useState('1');
+  const [ButtonID, setButtonID] = useState('');
   
 
   const getFristOptionsRouteByKey = (key: string | undefined) => {
@@ -22,13 +23,15 @@ export default function ScreenQuestion() {
   };
 
   const handlePress = (newValue: string, buttonPressed: number) => {
+    setButtonID(buttonPressed === 1? '1': '2');
     
     if (newValue === '0') {
         if (buttonPressed === 1) {
             const FristOP = getFristOptionsRouteByKey(QuestionID);
+            
         }else{
             const SecondOP = getSecondOptionsRouteByKey(QuestionID);
-          
+            
         }
     } else {
       setQuestionID(newValue);

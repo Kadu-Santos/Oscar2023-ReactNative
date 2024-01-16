@@ -64,5 +64,21 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
+  container_btn_termos: {
+    width: '100%',
+    alignItems: "center",
+    marginTop: '7%',
+  },
+
+  btn_termos:{
+    width: '34%',
+    alignItems: "center"
+  }, 
+
+  termos: {
+    color: '#00158b'
+  },
+
+  
 
 });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Alert  } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { styles } from './styles';
 import ImageQuestion from '../../components/image_question/ImageQuestion';
 import Question from '../../components/question/Question';
@@ -9,12 +9,15 @@ import DropDownCourses from '../../components/drop_down_courses/DropDownCourses'
 import DropDownSectors from '../../components/drop_down_sectors/DropDownSectors';
 import AgeSelector from '../../components/age_selector/AgeSelector';
 import { Link } from "expo-router";
+import TermsAndServices from '../../components/Terms_And_Services/index';
 
 export default function Home() {
   const [QuestionID, setQuestionID] = useState('01');
+  const [MainVisibility, setMainVisibility] = useState(false);
   const [Question_1_Visibility, setQuestion_1_Visibility] = useState(true);
   const [DropDownCoursesVisibility, setDropDownCoursesVisibility] = useState(false);
   const [DropDownSectorsVisibility, setDropDownSectorsVisibility] = useState(false);
+  const [TermsAndServicesVisibility, setTermsAndServicesVisibility] = useState(false);
   const [Question_4_Visibility, setQuestion_4_Visibility] = useState(false);
   const [ButtonVisibility, setButtonVisibility] = useState(false);
   const [TypeUser, setTypeUser] = useState('');
@@ -80,23 +83,32 @@ export default function Home() {
       }
   }
 
+  const handlePressTerms = (newValue: string) => {
+    TitleValue(newValue);
+    setQuestionID(newValue);
+  };
+
   const TitleValue = (key : string) =>{
-    if (key === '02') {
+    if (key === '01') {
+      settitle('Bem-Vindo');
+    }else if (key === '02') {
       settitle('Aluno');
     } else if (key === '03') {
       settitle('Servidor');
-    }else{
+    }else {
       settitle('Idade');
     }
-  }
+  };
 
   useEffect(() => {
+    setMainVisibility(QuestionID !== '00');
     setQuestion_1_Visibility(QuestionID === '01');
     setDropDownCoursesVisibility(QuestionID === '02');
     setDropDownSectorsVisibility(QuestionID === '03');
     setQuestion_4_Visibility(QuestionID === '04');
     setButtonVisibility(QuestionID !== '04');
     setVoltarVisibility(QuestionID === '02' || QuestionID === '03' ||QuestionID === '04');
+    setTermsAndServicesVisibility(QuestionID === '00');
   }, [QuestionID]);
 
 
@@ -131,13 +143,20 @@ export default function Home() {
             </View>
           }
 
-          <View style={styles.containertitle}>
-            <Text style={styles.title}>{title}</Text>
-          </View>
 
-          <ImageQuestion ImageKey={QuestionID} />
+        {MainVisibility &&
+          <>
+            <View style={styles.containertitle}>
+              <Text style={styles.title}>{title}</Text>
+            </View>
 
-          <Question textKey={QuestionID} />
+            <ImageQuestion ImageKey={QuestionID} />
+            
+            <Question textKey={QuestionID} />
+          </>
+        }
+
+
 
           {Question_1_Visibility &&  <UserSelector onUserSelected={handleUserSelected}/> }
           
@@ -149,7 +168,21 @@ export default function Home() {
           
 
           {Question_1_Visibility &&  
-              <NextButton OptionKey={QuestionID}  onPressCallback={handlePressUser}/>
+              <>
+                <NextButton OptionKey={QuestionID} onPressCallback={handlePressUser} />
+                <View style={styles.container_btn_termos}>
+                  <TouchableOpacity 
+                    style={styles.btn_termos}
+                    onPress={() => setQuestionID('00')}
+                  >
+                    <Text style={styles.termos}>Termos e Serviços</Text>
+                  </TouchableOpacity>
+                </View>
+              </>
+          }
+
+          {TermsAndServicesVisibility &&
+              <TermsAndServices onPressCallback={handlePressTerms} />
           }
 
           {DropDownCoursesVisibility && 
@@ -159,6 +192,8 @@ export default function Home() {
           {DropDownSectorsVisibility && 
               <NextButton OptionKey={QuestionID}  onPressCallback={handlePressSector}/>
           }
+
+
         
           
           <View style={styles.containerBTN}>
