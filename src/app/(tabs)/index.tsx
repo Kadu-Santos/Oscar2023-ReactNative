@@ -19,6 +19,7 @@ export default function Home() {
   const [ButtonVisibility, setButtonVisibility] = useState(false);
   const [TypeUser, setTypeUser] = useState('');
   const [TypeCourse, setTypeCourse] = useState('');
+  const [TypeSector, setTypeSector] = useState('');
   const [VoltarVisibility, setVoltarVisibility] = useState(false);
   const [title, settitle] = useState('Bem-Vindo');
   const newquestionID = TypeUser === 'Aluno' ? '02' : '03';
@@ -37,6 +38,24 @@ export default function Home() {
     }
   };
 
+  const handlePressCourse = (newValue: string) => {
+    if (TypeCourse !== '') {      
+          setQuestionID(newValue);
+          TitleValue(newValue);
+    }else{
+      showAlert();
+    }
+  };
+
+  const handlePressSector = (newValue: string) => {
+    if (TypeSector !== '') {      
+          setQuestionID(newValue);
+          TitleValue(newValue);
+    }else{
+      showAlert();
+    }
+  };
+
   const showAlert = () => {
     Alert.alert('Aviso', 'Por favor, selecione uma opção antes de continuar.', [{ text: 'OK' }], {
       cancelable: false,
@@ -47,13 +66,16 @@ export default function Home() {
       if (QuestionID === '02' || QuestionID === '03') {
         setQuestionID('01');
         settitle('Bem-vindo');
+        setTypeUser('');
       }else{
           if (newquestionID === '02') {
             setQuestionID('02');
             settitle('Aluno');
+            setTypeCourse('');
           }else{
             setQuestionID('03');
             settitle('Servidor');
+            setTypeSector('');
           }
       }
   }
@@ -86,6 +108,10 @@ export default function Home() {
     setTypeCourse(selectedValue);
   };
 
+  const handleSectorSelected = (selectedValue: string) => {   
+    setTypeSector(selectedValue);
+  };
+
   return (
 
     <ScrollView style={styles.container}>
@@ -115,9 +141,9 @@ export default function Home() {
 
           {Question_1_Visibility &&  <UserSelector onUserSelected={handleUserSelected}/> }
           
-          {DropDownCoursesVisibility && <DropDownCourses/>}
+          {DropDownCoursesVisibility && <DropDownCourses onCoursesSelected={handleCourseSelected}/>}
           
-          {DropDownSectorsVisibility && <DropDownSectors/>}
+          {DropDownSectorsVisibility && <DropDownSectors onSectorSelected={handleSectorSelected}/>}
           
           {Question_4_Visibility && <AgeSelector/>}
           
@@ -127,7 +153,11 @@ export default function Home() {
           }
 
           {DropDownCoursesVisibility && 
-              <NextButton OptionKey={QuestionID}  onPressCallback={handlePressUser}/>
+              <NextButton OptionKey={QuestionID}  onPressCallback={handlePressCourse}/>
+          }
+
+          {DropDownSectorsVisibility && 
+              <NextButton OptionKey={QuestionID}  onPressCallback={handlePressSector}/>
           }
         
           

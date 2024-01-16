@@ -4,21 +4,26 @@ import { styles } from './styles';
 import { SelectList } from 'react-native-dropdown-select-list';
 import dropdownCoursesOptions from './dropdownCoursesOptions';
 
+interface DropDownCoursesProps {
+  onCoursesSelected: (value: string) => void;
+}
 
-const DropDownCourses = () => {
-  const [selectedOption, setSelectedOption] = useState<{ key: string; value: string } | null>(null);
- 
-  const handleDropdownChange = (value: { key: string; value: string } | null) => {
+const DropDownCourses: React.FC<DropDownCoursesProps> = ({ onCoursesSelected }) => {
+
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleDropdownChange = (value: string) => {
     setSelectedOption(value);
     let selectedCourses = value;
     console.log('Opção selecionada:', selectedCourses);
+    onCoursesSelected(selectedCourses);
     
   };
 
   return (
     <View style={styles.container}>
       <SelectList
-        setSelected={(val: { key: string; value: string } | null) => handleDropdownChange(val)}
+        setSelected={(val: string) => handleDropdownChange(val)}
         data={dropdownCoursesOptions}
         save="value"
         searchPlaceholder="Pesquisar"

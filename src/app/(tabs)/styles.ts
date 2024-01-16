@@ -55,6 +55,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#B1C7F7',
     borderRadius: 20,
+    marginTop: '4%'
   },
 
   text: {
