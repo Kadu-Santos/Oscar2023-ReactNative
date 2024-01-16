@@ -42,22 +42,24 @@ export const styles = StyleSheet.create({
   container_btn_termos_voltar:{
     width: '100%',
     alignItems: "center",
-    marginTop: '7%',
+    marginTop: '0%',
     marginBottom: '3%'
   },
 
   btn_termos_voltar: {
     width: '50%',
     alignItems: "center",
-    backgroundColor: '#0066ffbb',
+    backgroundColor: '#78bdfd54',
     borderRadius: 20,
+    opacity: 0.8,
   },
 
   termos_voltar:{
-    color: '#fff',
+    color: '#000000',
     padding: '3%',
     fontSize: 17,
     letterSpacing: 1,
+    opacity: 0.8,
     
   }
 });

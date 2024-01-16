@@ -12,6 +12,18 @@ const TermsAndServices: React.FC<TermsAndServicesProps> = (props) => {
   return (
   <View style={styles.container}> 
     {/* <ScrollView contentContainerStyle={styles.scroll}> */}
+
+    <View style={styles.container_btn_termos_voltar}>
+        <TouchableOpacity
+          style={styles.btn_termos_voltar}
+          onPress={() => {
+            onPressCallback('01');
+          }}
+        >
+          <Text  style={styles.termos_voltar}> Voltar </Text>
+        </TouchableOpacity>
+      </View>
+
       <Text style={styles.heading}>Termos de Serviço</Text>
 
       <Text style={styles.body}>
@@ -75,16 +87,6 @@ const TermsAndServices: React.FC<TermsAndServicesProps> = (props) => {
         proporcionar a você uma experiência cinematográfica personalizada e agradável!
       </Text>
 
-      <View style={styles.container_btn_termos_voltar}>
-                <TouchableOpacity
-                 style={styles.btn_termos_voltar}
-                  onPress={() => {
-                    onPressCallback('01');
-                  }}
-                >
-                  <Text  style={styles.termos_voltar}> Voltar </Text>
-                </TouchableOpacity>
-              </View>
 
     {/* </ScrollView> */}
   </View>
