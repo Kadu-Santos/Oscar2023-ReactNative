@@ -7,27 +7,25 @@ import dropdownCoursesOptions from './dropdownCoursesOptions';
 
 const DropDownCourses = () => {
   const [selectedOption, setSelectedOption] = useState<{ key: string; value: string } | null>(null);
-
-
+ 
   const handleDropdownChange = (value: { key: string; value: string } | null) => {
     setSelectedOption(value);
     let selectedCourses = value;
     console.log('Opção selecionada:', selectedCourses);
-    // selectedCourses recebe o valor selecionado
+    
   };
-  
 
   return (
     <View style={styles.container}>
       <SelectList
-        setSelected={(val: { key: string; value: string; } | null) => handleDropdownChange(val)}
+        setSelected={(val: { key: string; value: string } | null) => handleDropdownChange(val)}
         data={dropdownCoursesOptions}
         save="value"
         searchPlaceholder="Pesquisar"
         placeholder="Escolha uma Opção"
       />
-
     </View>
   );
 };
+
 export default DropDownCourses;

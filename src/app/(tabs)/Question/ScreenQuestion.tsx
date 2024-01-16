@@ -7,10 +7,7 @@ import Options from '../../../components/options/Options';
 import { Link } from 'expo-router';
 import FristOptionsRoute from "./FristOptionsRoute";
 import SecondOptionsRoute from "./SecondOptionsRoute";
-import { useNavigation } from "@react-navigation/native";
-
 export default function ScreenQuestion() {
-  const navigation = useNavigation();
   const [QuestionID, setQuestionID] = useState('1');
   
 
@@ -51,7 +48,7 @@ export default function ScreenQuestion() {
           <Options OptionKey={QuestionID} onPressCallback={handlePress} />
         </Link> */}
 
-      <Options OptionKey={QuestionID} onPressCallback={handlePress} onPress={() => navigation.navigate('Home')} />
+      <Options OptionKey={QuestionID} onPressCallback={handlePress} />
 
       </View>
     

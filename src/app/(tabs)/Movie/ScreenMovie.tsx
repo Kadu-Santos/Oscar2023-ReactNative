@@ -26,3 +26,5 @@ export default function ScreenMovie() {
     </ScrollView>
   );
 }
+
+
