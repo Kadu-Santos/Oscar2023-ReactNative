@@ -8,14 +8,16 @@ import { Link } from 'expo-router';
 import FristOptionsRoute from "./FristOptionsRoute";
 import SecondOptionsRoute from "./SecondOptionsRoute";
 import { TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
+import { setMovieKey } from '../global';
+
 
 export default function ScreenQuestion() {
   const [QuestionID, setQuestionID] = useState('1');
   const [ButtonID, setButtonID] = useState('');
   const [VoltarVisibility, setVoltarVisibility] = useState(false);
-
   const [returnroutes, setreturnroutes] = useState<string[]>([]);
-
+  const router = useRouter();
   
   useEffect(() => {
     setVoltarVisibility(QuestionID !== '1');
@@ -37,8 +39,12 @@ export default function ScreenQuestion() {
     if (newValue === '0') {
       if (buttonPressed === 1) {
         const FristOP = getFristOptionsRouteByKey(QuestionID);
+        setMovieKey(FristOP);
+        router.push('/(tabs)/Movie/ScreenMovie');
       } else {
         const SecondOP = getSecondOptionsRouteByKey(QuestionID);
+        setMovieKey(SecondOP);
+        router.push('/(tabs)/Movie/ScreenMovie');
       }
     } else {
       const previouskey: string = QuestionID;

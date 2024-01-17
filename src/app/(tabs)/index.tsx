@@ -193,9 +193,6 @@ export default function Home() {
               <NextButton OptionKey={QuestionID}  onPressCallback={handlePressSector}/>
           }
 
-
-        
-          
           <View style={styles.containerBTN}>
               {Question_4_Visibility &&  
                   <Link href="/(tabs)/Question/ScreenQuestion" asChild style={styles.button}>
