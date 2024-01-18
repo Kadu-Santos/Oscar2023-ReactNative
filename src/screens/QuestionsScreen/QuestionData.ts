@@ -55,7 +55,7 @@ export const QuestionData: { [key: string]: data } = {
         questionText: 'Qual é a ameaça que você enfrenta?',
         options: ['Distância dos filhos', 'Opressão religiosa'],
         buttonRoute: ['q.11', 'f.5'],
-        questionImage: '../../../assets/images/questions/question-8.png',
+        questionImage: require('../../../assets/images/questions/question-8.png'),
     },
     'q.9': {
         backgroundOption: '#C9F1D4',

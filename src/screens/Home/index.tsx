@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
 import React from "react";
@@ -8,8 +8,6 @@ import { TitlePage } from "../../components/TitlePage";
 import { BodyText } from "../../components/BodyText";
 import { ImageBody } from "../../components/ImageBody";
 import img from '../../../assets/images/questions/initial.png'
-
-
 
 export function Home() {
     const navigation = useNavigation();

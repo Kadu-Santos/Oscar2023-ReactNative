@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
    box:{
     backgroundColor: theme.colors.primary,
     height: '100%',
+    justifyContent : 'center',
    },
 
     container: {

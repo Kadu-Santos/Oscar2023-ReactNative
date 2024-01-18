@@ -10,7 +10,7 @@ import { ImageBody } from "../../components/ImageBody";
 import { DropDown } from "../../components/DropDown/DropDown";
 import { Back } from "../../components/Back";
 import dropdownCoursesOptions from './dropdownCoursesOptions';
-import img from '../../../assets/images/questions/initial.png'
+import img from '../../../assets/images/questions/student.png'
 
 
 export function Student() {

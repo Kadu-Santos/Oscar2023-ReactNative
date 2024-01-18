@@ -7,7 +7,7 @@ export declare global{
       Employee: undefined;
       Age: undefined;
       QuestionsScreen: undefined;
-      Movies:{
+      MoviesScreen:{
         movieKey: string;
       };
     }

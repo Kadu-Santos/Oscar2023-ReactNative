@@ -9,7 +9,7 @@ import { Student } from "../screens/Student";
 import { Employee } from "../screens/Employee";
 import { Age } from "../screens/Age";
 import { QuestionsScreen } from "../screens/QuestionsScreen";
-import { Movies } from "../screens/Movies";
+import { MoviesScreen } from "../screens/Movies";
 
 export function StackRoutes() {
     return (
@@ -63,8 +63,8 @@ export function StackRoutes() {
             />
 
             <Screen
-                name='Movies'
-                component={Movies}
+                name='MoviesScreen'
+                component={MoviesScreen}
                 options={{
                     headerShown: false
                 }}

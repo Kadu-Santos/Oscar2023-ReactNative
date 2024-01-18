@@ -1,8 +1,9 @@
-import { View, ScrollView, ImageSourcePropType } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { styles } from "./styles";
+import { View, ScrollView, ImageSourcePropType} from "react-native";
+import { useNavigation} from "@react-navigation/native";
 import React, { useCallback, useState } from "react";
+import { useBackHandler } from "@react-native-community/hooks";
 
+import { styles } from "./styles";
 import { ImageBody } from "../../components/ImageBody";
 import { BodyText } from "../../components/BodyText";
 import { Button } from "../../components/Button";
@@ -10,7 +11,7 @@ import { Back } from "../../components/Back";
 import { QuestionData } from "./QuestionData";
 
 function getColorByKey(key: string): string {
-    return QuestionData[key]?.backgroundOption || '#fff';
+    return QuestionData[key]?.backgroundOption;
 }
 
 function getTextByKey(key: string): string {
@@ -18,15 +19,15 @@ function getTextByKey(key: string): string {
 }
 
 function getValuesByKey(key: string): string[] {
-    return QuestionData[key]?.options || ['', ''];
+    return QuestionData[key]?.options;
 }
 
 function getRouteButtonByKey(key: string): string[] {
-    return QuestionData[key]?.buttonRoute || ['', ''];
+    return QuestionData[key]?.buttonRoute;
 }
 
 function getImageByKey(key: string): ImageSourcePropType {
-    return QuestionData[key]?.questionImage || '';
+    return QuestionData[key]?.questionImage;
 }
 
 
@@ -35,22 +36,22 @@ export function QuestionsScreen() {
     const [questionKey, setQuestionKey] = useState("q.1");
     const [visitedPaths, setVisitedPaths] = useState<string[]>([]);
 
+
     const updateQuestion = useCallback((buttonKey: string) => {
         const btRoute = getRouteButtonByKey(questionKey);
         const nextQuestionKey = buttonKey === '0' ? btRoute[0] : btRoute[1];
 
-        if(nextQuestionKey.charAt(0).toLowerCase() === 'f'){
-            navigation.navigate('Movies', {movieKey: nextQuestionKey})
+        if (nextQuestionKey.charAt(0).toLowerCase() === 'f') {
+            navigation.navigate('MoviesScreen', { movieKey: nextQuestionKey })
+        } else {
+            setVisitedPaths((prevPaths) => [...prevPaths, questionKey]);
+
+            setQuestionKey(nextQuestionKey);
+            setColorButton(getColorByKey(nextQuestionKey));
+            setQuestionText(getTextByKey(nextQuestionKey));
+            setBtOptions(getValuesByKey(nextQuestionKey));
+            setImage(getImageByKey(nextQuestionKey));
         }
-
-        setVisitedPaths((prevPaths) => [...prevPaths, questionKey]);
-
-        setQuestionKey(nextQuestionKey);
-        setColorButton(getColorByKey(nextQuestionKey));
-        setQuestionText(getTextByKey(nextQuestionKey));
-        setBtOptions(getValuesByKey(nextQuestionKey));
-        setImage(getImageByKey(nextQuestionKey));
-
     }, [questionKey]);
 
     const navigateBack = useCallback(() => {
@@ -73,8 +74,12 @@ export function QuestionsScreen() {
     const [colorButton, setColorButton] = useState(() => getColorByKey(questionKey));
     const [questionText, setQuestionText] = useState(() => getTextByKey(questionKey));
     const [btOptions, setBtOptions] = useState(() => getValuesByKey(questionKey));
-    const [imgQuestion, setImage ] = useState(() => getImageByKey(questionKey))
-    
+    const [imgQuestion, setImage] = useState(() => getImageByKey(questionKey))
+
+    useBackHandler(() => {
+        navigateBack();
+        return true;
+    });
 
     return (
         <View style={styles.box}>
