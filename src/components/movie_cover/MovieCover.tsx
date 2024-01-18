@@ -1,4 +1,4 @@
-import { View, Image, TextProps,TouchableOpacity, Text} from 'react-native';
+import { View, Image, TextProps,TouchableOpacity, Text, StatusBar} from 'react-native';
 import { styles } from "./styles";
 import { getAgeClasificatorByKey } from "./getAgeClasificatorByKey";
 import CoversPath from "./CoversPath";
@@ -7,6 +7,7 @@ import { getStarsPathByKey } from "./getStarsPathByKey";
 interface MovieCoverProps extends TextProps {
   Coverkey: string;
 }
+
 
 const getCoversPathByKey = (key: string | undefined) => {
   const CoversEntry = CoversPath.find((entry) => entry.key === key);
@@ -21,6 +22,12 @@ const MovieCover: React.FC<MovieCoverProps> = (props) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        animated={true}
+        backgroundColor="#ff000000"
+        barStyle="dark-content"
+        translucent={true}
+      />
 
       <View style={styles.containerimage}>
         <Image

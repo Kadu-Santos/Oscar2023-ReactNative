@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, StatusBar, View } from 'react-native';
 import { styles } from './styles';
 import MovieCover from '../../../components/movie_cover/MovieCover';
 import Title from '../../../components/title/Title';
@@ -20,16 +20,20 @@ export default function ScreenMovie() {
   }, [moviekey]);
 
   return (
-    <ScrollView style={styles.container}>
-      <MovieCover Coverkey={ID}/>
-      <Title TitleKey={ID}/>
-      <MovieDescription MovieDescriptionKey={ID}/>
-      <DirectorMovie NameDirectorKey={ID}/>
-      <MovieDuration MovieDurationKey={ID}/>
-      <MovieGenre MovieGenreKey={ID}/>
-      <MovieAvailable movieKey={ID}/>      
-      <RestartButton BackgroundKey={ID}/>
+      <>
+      <MovieCover Coverkey={ID} />
+      <ScrollView style={styles.container}>
+      <Title TitleKey={ID} />
+      <MovieDescription MovieDescriptionKey={ID} />
+      <DirectorMovie NameDirectorKey={ID} />
+      <View style={styles.lado}>        
+        <MovieDuration MovieDurationKey={ID} />
+        <MovieGenre MovieGenreKey={ID} />
+      </View>
+      <MovieAvailable movieKey={ID} />
+      <RestartButton BackgroundKey={ID} />
     </ScrollView>
+    </>
   );
 }
 

@@ -24,9 +24,9 @@ const MovieDuration: React.FC<MovieDurationProps> = (props) => {
               source={{ uri: 'https://cdn-icons-png.flaticon.com/128/3964/3964959.png' }}
               style={styles.icon} 
             />
-
-            <Text style={styles.text}>{MovieDurationValue} m</Text>
+            <Text style={styles.titulo}> DURAÇÃO </Text>
         </View>
+            <Text style={styles.text}>{MovieDurationValue} m</Text>
 
       </View>
   );

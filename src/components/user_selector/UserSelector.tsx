@@ -28,6 +28,7 @@ const UserSelector: React.FC<UserSelectorProps> = ({ onUserSelected }) => {
         }}
         labelStyle={{ fontSize: 20, color: '#000' }}
         buttonSize={25}
+        animation={false}
       />
     </View>
   );

@@ -23,9 +23,9 @@ const DirectorMovie: React.FC<DirectorMovieProps> = (props) => {
               source={{ uri: 'https://cdn-icons-png.flaticon.com/128/408/408426.png' }}
               style={styles.icon} 
             />
-
-            <Text style={styles.text}>{NameDirectorValue}</Text>
+            <Text style={styles.titulo}> DIRETOR </Text>
         </View>
+            <Text style={styles.text}>{NameDirectorValue}</Text>
 
     </View>
   );

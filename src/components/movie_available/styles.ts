@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: '10%',
     marginTop: '4%',
-    marginBottom: '10%'
   },
 
   containerAvailable: {
@@ -24,13 +23,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   
-  text:{
-    paddingBottom: '2%',
-    paddingRight: '4%',
-    paddingLeft: '2%',
-    paddingTop:'5%', 
-    textAlign: 'justify',
-  
+  titulo:{
+    fontSize: 20,
+    fontWeight: "400",
+    letterSpacing: 1, 
   },
   
   icon:{
@@ -52,7 +48,7 @@ export const styles = StyleSheet.create({
   
   iconAvailable: {
     width: '15%',
-    height: '63%',
+    height: '55%',
     margin: '2%',
     borderRadius: 7,
 

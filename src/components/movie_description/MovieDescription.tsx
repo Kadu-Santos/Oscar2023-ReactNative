@@ -24,9 +24,9 @@ const MovieDescription: React.FC<MovieDescriptionProps> = (props) => {
             source={{ uri: 'https://cdn-icons-png.flaticon.com/128/1642/1642358.png' }}
             style={styles.icon} 
           />
-
-          <Text style={styles.text}>{MovieDescriptionValue}</Text>
+          <Text style={styles.titulo}> DESCRIÇÃO </Text>
         </View>
+          <Text style={styles.text}>{MovieDescriptionValue}</Text>
 
       </View>
   );

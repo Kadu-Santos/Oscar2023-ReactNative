@@ -8,5 +8,13 @@ export const styles = StyleSheet.create({
 
   },
 
+  lado:{
+    width: '100%',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent:"space-evenly",
+    
+  },
+
 
 });

@@ -24,9 +24,9 @@ const MovieGenre: React.FC<MovieGenreProps> = (props) => {
           source={{ uri: 'https://cdn-icons-png.flaticon.com/128/8616/8616806.png'}}
           style={styles.icon} 
         />
-
-         <Text style={styles.text}>{MovieGenreValue}</Text>
+        <Text style={styles.titulo}> GÉNERO</Text>
       </View>
+         <Text style={styles.text}>{MovieGenreValue}</Text>
 
       </View>
   );

@@ -3,29 +3,34 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
   container: {
-    width: '100%',
+    width: '50%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
   },
 
   containerGenre: {
-    width: '90%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     textAlign: 'cente',
-    marginTop: '4%',
-    marginBottom: '1%',
 
   },
   
-  text:{
-    paddingBottom: '4%',
-    paddingRight: '4%',
-    paddingLeft: '1%',
-    textAlign: 'justify',
-  
+  titulo:{
+    fontSize: 20,
+    fontWeight: "400",
+    letterSpacing: 1, 
+  },
+
+  text: {
+    textAlign: 'center',
+    fontSize: 17,
+    marginBottom: '5%',
+    padding: '1%',
+    width: '70%'
+
   },
   
   icon:{

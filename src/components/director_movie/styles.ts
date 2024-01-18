@@ -22,11 +22,18 @@ export const styles = StyleSheet.create({
     height: 25,
   },
 
+  titulo:{
+    fontSize: 20,
+    fontWeight: "400",
+    letterSpacing: 1, 
+  },
+
   text: {
-    padding: '5%',
-    paddingLeft: '2%',
-    textAlign: 'justify',
-    fontSize: 15
+    textAlign: 'center',
+    fontSize: 17,
+    marginBottom: '5%',
+    padding: '1%',
+
   },
 
   });

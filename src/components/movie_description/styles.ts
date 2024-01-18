@@ -20,11 +20,19 @@ export const styles = StyleSheet.create({
   
   },
 
+  titulo:{
+    fontSize: 20,
+    fontWeight: "400",
+    letterSpacing: 1, 
+  },
+
   text:{
     paddingBottom: '4%',
-    paddingRight: '4%',
-    paddingLeft: '4%',
+    paddingRight: '6%',
+    paddingLeft: '6%',
+    paddingTop: '1%',
     textAlign: 'justify',
+    fontSize: 16,
   },
   
   icon:{

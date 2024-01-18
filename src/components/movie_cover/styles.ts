@@ -1,9 +1,10 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 
   container: {
     width: '100%',
+    height: '50%',
     display: 'flex',
   },
 
@@ -15,7 +16,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
-    top: 20, 
+    top: 0, 
     zIndex: 2,
     padding: '1%',
     backgroundColor: '#D6D6D6',
@@ -50,11 +51,12 @@ export const styles = StyleSheet.create({
 
   image: {
     width: '100%',
-    height: 500, // não sei pq mas aqui não aceita %
+    height: Dimensions.get("window").height / 2,
+    resizeMode: 'cover',
   },
 
   containerInfo: {
-    height: '8%',
+    height: '11%',
     margin: '3%',
     marginBottom: '1%',
     position: 'absolute',
@@ -71,7 +73,7 @@ export const styles = StyleSheet.create({
   },
 
   iconStars: {
-    width: '60%',
+    width: '55%',
     height: 'auto',
     marginLeft: -10,
 

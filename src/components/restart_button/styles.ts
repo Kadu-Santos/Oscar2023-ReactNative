@@ -6,13 +6,14 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: '20%',
     paddingBottom: '2%',
-  
+
+   
   },
   
   containerRestartButton: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: '8%',
+    marginBottom: '20%',
     justifyContent: 'center',
 
   },
