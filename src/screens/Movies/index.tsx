@@ -11,6 +11,8 @@ import { DetailMovie } from "../../components/DetailMovie";
 import { Button } from "../../components/Button";
 import { MovieAvailable } from "../../components/MovieAvailable";
 
+import { addItem, generateSequentialKey } from "../../data/datafunctions";
+import { useAppContext } from "../../components/AppContext";
 
 export const getMovieByKey = (key: string): MovieData | undefined => {
     return DataMovie[key];
@@ -25,12 +27,21 @@ export function MoviesScreen() {
     const route = useRoute();
     const { movieKey } = route.params as paramsProps;
     const navigation = useNavigation();
-
+    const { globalKey, setKey } = useAppContext();
+    
+    const handleNextButtonPress = async () => {
+        if (globalKey && title) {
+            addItem(globalKey, { movie: title });
+            const key = await generateSequentialKey();
+            setKey(key)
+            navigation.navigate("Home");
+        }
+    };
 
     useEffect(() => {
         const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
             if (route.name === 'MoviesScreen') {
-                navigation.navigate('Home');
+                handleNextButtonPress();
                 return true;
             }
             return false;
@@ -56,7 +67,7 @@ export function MoviesScreen() {
                     <BodyText text={title} />
                     <DetailMovie duration={duration} director={director} genre={genre} description={desc}/>
                     <MovieAvailable keyMovie={movieKey}/>
-                    <Button title="Reiniciar" color="#cdc388" onPress={() => navigation.navigate('Home')}/>
+                    <Button title="Reiniciar" color="#cdc388" onPress={handleNextButtonPress}/>
                 </View>
             </ScrollView>
         </View>

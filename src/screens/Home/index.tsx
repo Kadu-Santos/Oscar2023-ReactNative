@@ -1,7 +1,10 @@
-import { View, Text, TouchableOpacity, ScrollView} from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
-import React from "react";
+import React, { useEffect } from "react";
+
+import { useAppContext } from "../../components/AppContext";
+import { generateSequentialKey } from "../../data/datafunctions";
 
 import { Button } from "../../components/Button";
 import { TitlePage } from "../../components/TitlePage";
@@ -10,7 +13,17 @@ import { ImageBody } from "../../components/ImageBody";
 import img from '../../../assets/images/questions/initial.png'
 
 export function Home() {
+
     const navigation = useNavigation();
+    const { setKey } = useAppContext();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const key = await generateSequentialKey();
+            setKey(key);
+        };
+        fetchData();
+    }, []);
 
     return (
         <View style={styles.box}>
